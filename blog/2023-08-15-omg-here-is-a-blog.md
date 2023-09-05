@@ -2,8 +2,8 @@
 slug: omg-here-is-a-blog
 title: 天哪这里还能写博客
 authors:
-  name: Kawaii Soda
-  title: Docusaurus Core Team
+  name: Soda
+  title: Kawaii
   url: https://github.com/ssoda01
   image_url: https://github.com/ssoda01.png
 tags: [emotion]

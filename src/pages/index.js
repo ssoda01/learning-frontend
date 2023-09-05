@@ -8,7 +8,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -18,7 +18,8 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Start (ง •_•)ง
+            {/* Docusaurus Tutorial - 5min ⏱️ */}
           </Link>
         </div>
       </div>
@@ -27,13 +28,13 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Hello ${siteConfig.title}`}
       description="我真的很想去鹰角">
       <HomepageHeader />
-      <main>
+      <main style={{ display: "flex", flex: "auto", background: "#9b8ba2", marginBottom: "0px", height: "max-content" }}>
         <HomepageFeatures />
       </main>
     </Layout>

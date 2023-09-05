@@ -6,12 +6,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'A Website',
-  tagline: '其实也没有很欢迎大家和我一起学习前端',
-  favicon: 'img/favicon.ico',
+  title: 'LearningFE',
+  tagline: '每天进步一点点',
+  favicon: 'img/logo.png',
 
   // Set the production url of your site here
-  url: 'https://learning-frontend-without-soda.com',
+  url: 'https://learning-frontend-without-soda.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -64,10 +64,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'LearningFE',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
@@ -140,6 +140,19 @@ const config = {
         },
       ],
     }),
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 }
 
 module.exports = config
