@@ -1,9 +1,3 @@
-<!-- ---
-sidebar_position: 2
---- -->
-
-# Intro
-
 当我用tailwind+nextjs的时候 看到可以安装模板
 ```
 npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/assets-metadata-css-starter"

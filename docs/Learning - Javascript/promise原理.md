@@ -1,8 +1,4 @@
-<!-- ---
-sidebar_position: 1
---- -->
-
-# Promise
+# Promise原理
 
 关于promise的原理：
 - [promiseplus](https://promisesaplus.com/#point-3)

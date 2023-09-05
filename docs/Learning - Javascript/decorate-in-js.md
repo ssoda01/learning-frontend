@@ -1,4 +1,4 @@
-# Decorate
+# decorate-in-js
 
 总听说spring boot的装饰器很方便，@一下就可以生成swagger。
 ```java
