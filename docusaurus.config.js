@@ -28,8 +28,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh',
-    locales: ['en', 'zh'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
@@ -140,19 +140,6 @@ const config = {
         },
       ],
     }),
-  plugins: [
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
-  ],
 }
 
 module.exports = config
