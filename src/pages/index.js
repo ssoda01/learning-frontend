@@ -34,7 +34,7 @@ export default function Home() {
       title={`Hello ${siteConfig.title}`}
       description="我真的很想去鹰角">
       <HomepageHeader />
-      <main style={{ display: "flex", flex: "auto", background: "#9b8ba2", marginBottom: "0px", height: "max-content" }}>
+      <main>
         <HomepageFeatures />
       </main>
     </Layout>

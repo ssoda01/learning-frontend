@@ -7,4 +7,4 @@ sidebar_position: 1
 
 # Intro
 
-还没想好这里放什么。
+感谢 [Vercel](https://vercel.com/) 对本站的大力支持。

@@ -1,39 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
-
-const FeatureList = [
-  {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
+import Link from '@docusaurus/Link';
+import Layout from '@theme/Layout';
+import { CtaCards, icons } from '@infinum/docusaurus-theme';
 
 function Feature({ Svg, title, description }) {
   return (
@@ -52,13 +22,26 @@ function Feature({ Svg, title, description }) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {/* {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))} */}
-        </div>
+      <div id='get-started'>
+        <CtaCards
+          title='Welcome'
+          subtitle="你好呀，欢迎来到Soda的面试复习自留地。本站为无人值守自助学习站。但你仍然可以通过以下几种方式找到我。"
+          cards={[
+            {
+              icon: icons.frontendDevelopment,
+              text: '看看我最近在做些什么',
+              buttonLabel: 'Github',
+              buttonUrl: 'https://github.com/ssoda01',
+            },
+            {
+              icon: icons.puzzleOpenJob,
+              text: '联系我',
+              buttonLabel: '点此发邮件',
+              buttonUrl: 'mailto:ssoda@qq.com',
+            }
+          ]}
+        />
       </div>
-    </section>
+    </section >
   );
 }
