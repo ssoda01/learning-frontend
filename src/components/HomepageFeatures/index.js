@@ -1,27 +1,42 @@
-import React from 'react';
+
+import React, { useState } from 'react'
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import { CtaCards, icons } from '@infinum/docusaurus-theme';
+// import ReactCurse, { Text, useInput, useExit } from 'react-curse'
 
-function Feature({ Svg, title, description }) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
+// const Feature = () => {
+//   const [counter, setCounter] = useState(0)
+
+//   useInput(
+//     input => {
+//       if (input === 'q') useExit()
+//       else setCounter(counter + 1)
+//     },
+//     [counter]
+//   )
+
+//   return (
+//     <Text>
+//       <Text block>
+//         Counter: <Text color="Green">{counter.toString()}</Text>
+//       </Text>
+//       <Text dim block>
+//         Press q to exit or any key to increment the counter
+//       </Text>
+//       <Text>
+//         Edit <Text inverse>App.tsx</Text>
+//       </Text>
+//     </Text>
+//   )
+// }
 
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
+      {/* <Feature/> */}
       <div id='get-started'>
         <CtaCards
           title='Welcome'
