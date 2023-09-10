@@ -311,6 +311,33 @@ typeof null的值为object，历史遗留问题。如果想具体判断null类�
 
 #### instanceof
 instanceof  内部通过原型链的方式来判断是否为构建函数的实例，常用于判断具体的对象类型。
+
+
+instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
+
+```
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+const auto = new Car('Honda', 'Accord', 1998);
+
+console.log(auto instanceof Car);
+// Expected output: true
+
+console.log(auto instanceof Object);
+// Expected output: true
+```
+```
+obj = {"a":"1"}
+obj instanceof Array
+// false
+obj instanceof Object
+// true
+new Date() instanceof Date
+// true
+```
 ```
 [] instanceof Array;
 ```
@@ -349,7 +376,23 @@ instanceOf([], Object) // true
 instanceOf([], String) // false
 instanceOf('a', String) // true
 ```
-
+```
+const myInstanceof = (originData, preferredType) => {
+    // originData
+    const pft = preferredType.prototype;
+    while (true) {
+        if (originData === null) {
+            return false
+        }
+        if (originData === pft) {
+            return true
+        }
+        originData = originData.__proto__
+    }
+}
+myInstanceof(originData = [], preferredType = Array)
+myInstanceof(originData = [], preferredType = String)
+```
 
 另外其实我们还可以直接通过构建函数来判断类型：
 ```
@@ -383,4 +426,25 @@ isNaN(1) // false
 
 
 ### 9.可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用
+
+可能发生隐式类型转换的场景有以下几种：
+
+1. 进行逻辑运算，比较运算符（例如 `==`）会隐式转换数据类型。
+2. 进行算术运算时，不同类型的数据会隐式转换为相同的数据类型。
+3. 字符串操作时，数字和布尔值等非字符串类型的数据会被转换为字符串类型。
+
+在进行类型转换时，JavaScript 会根据一定的转换原则来确定转换的结果。这些转换原则包括以下几点：
+
+1. 数字类型参与运算，字符串会被转成数字，布尔值会被转成 1 或 0。
+2. 字符串类型参与运算，数字和布尔值会被转换成字符串。
+3. 对象、数组等类型的参与运算会先转换成字符串，再根据情况进行转换。
+
+为了避免隐式类型转换带来的问题，我们可以采取以下方案：
+
+1. 优先使用严格相等运算符 `===`，避免使用 `==`。
+2. 在进行运算前，先确定操作数的数据类型并进行必要的类型转换。
+3. 在进行字符串操作时，使用模板字符串代替字符串拼接。
+
+此外，巧妙地应用隐式类型转换也是一种很常用的方法。例如，在将一个数字转化成字符串的场景下，我们可以使用 `+` 运算符 （类似于 `String(n)` ）或者 `NaN` 的特殊性质来构造一些有趣的代码。但是，在巧妙应用类型转换时，我们必须确保代码可读性，不要让代码过于晦涩难懂。
+
 ### 10.出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法
