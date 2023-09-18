@@ -77,6 +77,7 @@ const config = {
             label: 'Learn',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/playground', label: 'Playground', position: 'left' },
           {
             href: 'https://github.com/ssoda01/learning-frontend',
             label: 'GitHub',
