@@ -1,12 +1,8 @@
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
-const {
-    siteConfig: { customFields },
-} = useDocusaurusContext();
+import siteConfig from '@generated/docusaurus.config';
 
 if (ExecutionEnvironment.canUseDOM) {
-    const clarityProjectId = customFields.clarityProjectId;
+    const clarityProjectId = siteConfig.customFields.clarityProjectId;
     if (clarityProjectId && typeof clarityProjectId === 'string' && clarityProjectId.length > 0) {
         // Initialize or extend the global `clarity` function to queue commands
         window.clarity = window.clarity || function () {
