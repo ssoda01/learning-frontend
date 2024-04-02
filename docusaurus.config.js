@@ -31,7 +31,12 @@ const config = {
   //   defaultLocale: 'en',
   //   locales: ['en'],
   // },
-
+  customFields: {
+    clarityProjectId: process.env.CLARITY_PROJECT_ID,
+  },
+  clientModules: [
+    require.resolve('./static/scripts/_clarity.js'),
+  ],
   presets: [
     [
       'classic',

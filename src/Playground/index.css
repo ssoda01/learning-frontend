@@ -1,8 +1,8 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-@font-face {
+/* @font-face {
     font-family: "pixel";
     src: url('../../static/fusion-pixel-12px-monospaced-zh_hans.otf');
 }
@@ -10,8 +10,8 @@
 :root {
     --cp-color-20-hsl: 0deg 0% 0%;
     --cp-color-20: hsl(var(--cp-color-20-hsl));
-}
-
+} */
+/* 
 .bg {
     background: var(--cp-color-20);
     font-family: "pixel";
@@ -19,7 +19,7 @@
 
 .my-board {
     font-family: "pixel";
-}
+} */
 
 .mytextarea {
     caret-color: transparent;
